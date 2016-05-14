@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: n8Pr68LDbCJFcEjVFaZKwW0Ji9SI4naEx8A2irte5nkLTUcgUstvmsKvoDmts59I8JQzeJv+AyuMdtk2Pustnlw3R4SiqdCeaUxjgD5Tq344SjofdjxHXHwD8sT8QmOtxoIMhyzdbPi30MYnx4J2NXPTb4xCg3RSPVaLG4CRRil1EdWnAMtXZW/Tp6e0z9J/BERniaw1b46UcBE4tPdAokzEs88F4zHXl50cUv/RPzmednScQMFthNL3VnGp9rWekLgXrWMweu8jv+WLyhl/6IXD1VE50vi+ZUnF1LMlJdt5iOMhx1PjHV+k7Kh6Wfzvc/7j+3eK9m4rrRh9KbdLx0Ashr2T3flEyhuFVd3ROvMVihFSHG2AyXfe6L78tO8zaMc9cdphe33du0pVtYUcwItZm0MyxYUt9gRQY5wY0rRrDjLFwegoZIllMtgVNLczywBi5tZ7CXupESO8rCWtPSF92eojXk3Cpzn2LMQyfBuQYluhpo7i4J5bbC+golmt22z91JkUoKMdW6GHwBtxNmgBhEd5wki6BpJ10S/srwTIr67//jz6Z9k3zlz4dGMyretyU3d9ygoRFqi+El3rSxkKNqsXM3slVheSCJ009QfvR9HJjJEC7zv+WWKk2ybHCb5VGhinM0sT1CXqGIoYjLG/alJUJUi1QFltcieX5Is=
+  app: peaceful-caverns-20293
+  on:
+    repo: rtablada/peepchat-ui
