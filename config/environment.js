@@ -13,6 +13,11 @@ module.exports = function(environment) {
       routeAfterAuthentication: 'app.index',
     },
 
+    flashMessageDefaults: {
+      timeout: 300000000,
+      extendedTimeout: 375
+    },
+
     modulePrefix: 'peepchat',
     environment: environment,
     baseURL: '/',
