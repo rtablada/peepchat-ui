@@ -7,6 +7,12 @@ module.exports = function(environment) {
       namespace: 'api',
     },
 
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.index',
+      routeAfterAuthentication: 'app.index',
+    },
+
     modulePrefix: 'peepchat',
     environment: environment,
     baseURL: '/',
